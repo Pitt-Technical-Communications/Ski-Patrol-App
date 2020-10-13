@@ -1,13 +1,13 @@
 //
-//  Report_InjuriesUITests.swift
-//  Report InjuriesUITests
+//  Report_AccidentUITests.swift
+//  Report-AccidentUITests
 //
-//  Created by Andrew Toader on 10.12.20.
+//  Created by Andrew Toader on 10.13.20.
 //
 
 import XCTest
 
-class Report_InjuriesUITests: XCTestCase {
+class Report_AccidentUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
