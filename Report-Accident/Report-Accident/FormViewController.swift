@@ -9,6 +9,15 @@ import UIKit
 
 class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
+    // Redirect to trail map button
+    @IBAction func ToTrailMap(_ sender: Any)
+    {
+        if let mapURL = URL(string: "https://www.7springs.com/mountain/slope-trail-guide/")
+        {
+            UIApplication.shared.open(mapURL)
+        }
+    }
+    
     /*
      * Picker View
      */
