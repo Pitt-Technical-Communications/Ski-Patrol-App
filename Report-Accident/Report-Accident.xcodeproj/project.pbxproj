@@ -15,6 +15,7 @@
 		49D912C42536061F0057654C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D912C22536061F0057654C /* LaunchScreen.storyboard */; };
 		49D912CF2536061F0057654C /* Report_AccidentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D912CE2536061F0057654C /* Report_AccidentTests.swift */; };
 		49D912DA2536061F0057654C /* Report_AccidentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D912D92536061F0057654C /* Report_AccidentUITests.swift */; };
+		A635D75A2536A86700B2F490 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A635D7592536A86700B2F490 /* FormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		49D912D52536061F0057654C /* Report-AccidentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Report-AccidentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D912D92536061F0057654C /* Report_AccidentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report_AccidentUITests.swift; sourceTree = "<group>"; };
 		49D912DB2536061F0057654C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A635D7592536A86700B2F490 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				49D912C02536061F0057654C /* Assets.xcassets */,
 				49D912C22536061F0057654C /* LaunchScreen.storyboard */,
 				49D912C52536061F0057654C /* Info.plist */,
+				A635D7592536A86700B2F490 /* FormViewController.swift */,
 			);
 			path = "Report-Accident";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				49D912BC2536061E0057654C /* ViewController.swift in Sources */,
 				49D912B82536061E0057654C /* AppDelegate.swift in Sources */,
 				49D912BA2536061E0057654C /* SceneDelegate.swift in Sources */,
+				A635D75A2536A86700B2F490 /* FormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
