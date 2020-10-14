@@ -7,21 +7,28 @@
 
 import UIKit
 
-class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+    
+    /*
+     * Picker View
+     */
+    
     // Set Picker View as output
     @IBOutlet weak var slopePicker: UIPickerView!
     
     // Picker Items
     var slopes:[String] = [String]()
    
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         // Set data source and delegate
         slopePicker.dataSource = self
         slopePicker.delegate = self
-        slopes = ["Other", "Boomerang", "Avalanche", "Tyrol"]
+        slopes = ["Other (Explain Below)", "Alpine Meadows", "Avalanche", "Beginner Area", "Blitzen Chairline", "Boomerang", "Cortina Trail", "Deer Pass Trail", "Fawn Lane", "Giant Boulder", "Giant Steps", "Goosebumps", "Great Western", "Gunnar", "Gunnar Chairline", "Little Boulder", "Little North Face", "Lost Boy", "Lost Girl", "North Face", "Phillip's Run", "Stowe", "Stowe Beginner Bowl", "Stowe Trail", "Tyrol",  "Village Trail", "Wagner", "Yodeler", "Yodeler Bypass"]
+        
+        LocationSlope.delegate = self
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -38,6 +45,28 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     {
         return slopes[row]
     }
+    
+    /*
+     * Submit Button
+     */
+    // Form Submited action button click
+    @IBAction func SubmitFormButton(_ sender: Any)
+    {
+        // Put Server Code here
+        
+        // Display Alert and navigate back to main screen
+        let sucessAlert = UIAlertController(title: "Form Submitted", message: "Your accident report form was sucessfuly submited.", preferredStyle: .alert)
+        
+        sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: nil))
+        
+        self.present(sucessAlert, animated: true)
+    }
+    
+    @IBOutlet weak var LocationSlope: UITextField!
+    
+    func textFieldShouldReturn(_ textFeild: UITextField) -> Bool
+    {
+        textFeild.resignFirstResponder()
+        return true
+    }
 }
-
-
