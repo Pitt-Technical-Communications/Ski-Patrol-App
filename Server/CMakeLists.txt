@@ -18,6 +18,7 @@ include_directories("${Boost_INCLUDE_DIRS}")
 
 # Set source files
 set(SOURCES
+    Main.cpp
     src/ConnectionHandler.cpp
     src/Server.cpp
 )
