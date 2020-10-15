@@ -9,14 +9,6 @@ import UIKit
 
 class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
-    // Redirect to trail map button
-    @IBAction func ToTrailMap(_ sender: Any)
-    {
-        if let mapURL = URL(string: "https://www.7springs.com/mountain/slope-trail-guide/")
-        {
-            UIApplication.shared.open(mapURL)
-        }
-    }
     
     /*
      * Picker View
@@ -31,7 +23,6 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         // Set data source and delegate
         slopePicker.dataSource = self
         slopePicker.delegate = self
@@ -71,6 +62,9 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         self.present(sucessAlert, animated: true)
     }
     
+    /*
+     * Slope Location Text Box
+     */
     @IBOutlet weak var LocationSlope: UITextField!
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
