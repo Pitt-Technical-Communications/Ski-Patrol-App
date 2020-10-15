@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
+# Find boost
+find_package(Boost 1.53.0 COMPONENTS system)
+
 ### Require out-of-source builds
 file(TO_CMAKE_PATH "${PROJECT_BINARY_DIR}/CMakeLists.txt" LOC_PATH)
 if(EXISTS "${LOC_PATH}")
@@ -8,9 +11,6 @@ endif()
 
 # Set the project name
 project(Report_Server)
-
-# Find boost
-find_package(Boost 1.53.0 COMPONENTS system)
 
 # Set include directory
 include_directories("${PROJECT_SOURCE_DIR}/include")
@@ -23,3 +23,4 @@ set(SOURCES
 )
 
 add_executable(main ${SOURCES})
+target_link_libraries(main ${Boost_LIBRARIES})
