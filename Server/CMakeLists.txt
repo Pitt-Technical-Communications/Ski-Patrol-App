@@ -23,4 +23,4 @@ set(SOURCES
 )
 
 add_executable(main ${SOURCES})
-target_link_libraries(main ${Boost_LIBRARIES})
+target_link_libraries(main "${Boost_LIBRARIES}")
