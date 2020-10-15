@@ -236,7 +236,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Report Form" id="oWC-Fw-94p">
-                        <barButtonItem key="backBarButtonItem" title="Cancel" id="a4E-WJ-ied"/>
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="WGz-DV-JzK">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="LocationSlope" destination="tMX-mn-9Ut" id="cm8-8G-12T"/>
@@ -273,6 +275,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="kiS-Vf-Kjh"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="home-page-pic" width="375" height="228"/>
         <systemColor name="systemBackgroundColor">

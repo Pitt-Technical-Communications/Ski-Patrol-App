@@ -33,7 +33,9 @@ class ViewController: UIViewController {
         
         // Sets navigation bar title color and font
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 36.0)]
-
+        
+        // Sets font size for back button
+        UIBarButtonItem.appearance().setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 20.0)], for: UIControl.State.normal)
 
     }
     
