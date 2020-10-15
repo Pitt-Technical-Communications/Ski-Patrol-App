@@ -73,9 +73,9 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     @IBOutlet weak var LocationSlope: UITextField!
     
-    func textFieldShouldReturn(_ textFeild: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
-        textFeild.resignFirstResponder()
+        textField.resignFirstResponder()
         return true
     }
 }
