@@ -29,7 +29,9 @@ class ViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true;
         
         // Sets navigation bar color
-        self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 254/255, green: 80/255, blue: 74/255, alpha: 1)
+        //self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 254/255, green: 80/255, blue: 74/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "redAccent")
+
         
         // Sets navigation bar title color and font
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 36.0)]
