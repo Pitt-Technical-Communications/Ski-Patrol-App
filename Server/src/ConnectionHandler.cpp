@@ -47,19 +47,20 @@ void ConnectionHandler::HandleRead(const boost::system::error_code& rErr, size_t
     // Determine what needs done for this request
     HandleRequest(req);
 
-    m_socket.async_write_some(boost::asio::buffer(m_message, ConnectionHandler::MAX_LENGTH),
-                              boost::bind(&ConnectionHandler::HandleWrite,
-                              shared_from_this(),
-                              boost::asio::placeholders::error,
-                              boost::asio::placeholders::bytes_transferred));
+
 }
 
 void ConnectionHandler::HandleWrite(const boost::system::error_code& rErr, size_t bytesTransferred)
 {
     if (!rErr)
     {
+	    m_socket.async_write_some(boost::asio::buffer(m_message, ConnectionHandler::MAX_LENGTH),
+	                              boost::bind(&ConnectionHandler::HandleWrite,
+	                                          shared_from_this(),
+	                                          boost::asio::placeholders::error,
+	                                          boost::asio::placeholders::bytes_transferred));
         // Just print out a message
-        std::cout << "Server sent %s" << m_message.c_str() << std::endl;
+        std::cout << "Server sent " << m_message.c_str() << std::endl;
     }
     else
     {
