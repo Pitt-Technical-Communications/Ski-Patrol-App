@@ -68,7 +68,7 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             // Display Alert and navigate back to main screen
             let sucessAlert = UIAlertController(title: "Form Submitted", message: "Your accident report form was sucessfuly submited.", preferredStyle: .alert)
             
-            sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: nil))
+            sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: returnToHome))
             
             self.present(sucessAlert, animated: true)
             
@@ -79,12 +79,16 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             // Display Alert and navigate back to main screen
             let sucessAlert = UIAlertController(title: "Error", message: "Could not connect to server. Please contact server administrator. If this is an emergency, call Ski Patrol using number on Home Page", preferredStyle: .alert)
             
-            sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: nil))
+            sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: returnToHome))
             
             self.present(sucessAlert, animated: true)
         }
         
         connection.disconnect()
+    }
+    
+    func returnToHome(alert: UIAlertAction!) {
+        performSegue(withIdentifier: "exitForm", sender: nil)
     }
     
     /*
