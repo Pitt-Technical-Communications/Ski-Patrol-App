@@ -116,6 +116,8 @@ void ConnectionHandler::HandleRequest(Common::Request& rReq)
      {
          case Common::RequestCode::REPORT:
         {
+        	resp.SetResponseCode(Common::ResponseCode::SUCCESS);
+        	resp.SetData("Recieved");
             break;
         }
          default:

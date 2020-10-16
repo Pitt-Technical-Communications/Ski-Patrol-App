@@ -9,7 +9,6 @@ import UIKit
 
 class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
-    
     /*
      * Picker View
      */
@@ -19,6 +18,9 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     // Picker Items
     var slopes:[String] = [String]()
+    
+    // Socket item to communicate with server
+    var connection = SocketDataManager()
    
     override func viewDidLoad()
     {
@@ -29,6 +31,9 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         slopes = ["Other (Explain Below)", "Alpine Meadows", "Avalanche", "Beginner Area", "Blitzen Chairline", "Boomerang", "Cortina Trail", "Deer Pass Trail", "Fawn Lane", "Giant Boulder", "Giant Steps", "Goosebumps", "Great Western", "Gunnar", "Gunnar Chairline", "Little Boulder", "Little North Face", "Lost Boy", "Lost Girl", "North Face", "Phillip's Run", "Stowe", "Stowe Beginner Bowl", "Stowe Trail", "Tyrol",  "Village Trail", "Wagner", "Yodeler", "Yodeler Bypass"]
         
         LocationSlope.delegate = self
+        
+        let server_info = DataSocket(ip: "3.23.104.34", port_in: 1235)
+        connection.connectWith(socket: server_info)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -53,6 +58,7 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBAction func SubmitFormButton(_ sender: Any)
     {
         // Put Server Code here
+        connection.send(message: "2 Accident Sent")
         
         // Display Alert and navigate back to main screen
         let sucessAlert = UIAlertController(title: "Form Submitted", message: "Your accident report form was sucessfuly submited.", preferredStyle: .alert)
@@ -60,6 +66,8 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: nil))
         
         self.present(sucessAlert, animated: true)
+        
+        connection.disconnect()
     }
     
     /*
@@ -72,4 +80,6 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         textField.resignFirstResponder()
         return true
     }
-}
+ }
+
+

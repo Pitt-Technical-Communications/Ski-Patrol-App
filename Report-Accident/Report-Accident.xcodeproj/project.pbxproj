@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		491D7870253734F70088DAB6 /* GetRoundedButtonsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491D786F253734F70088DAB6 /* GetRoundedButtonsUI.swift */; };
+		49AD739C2539301600439095 /* SocketDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD739B2539301600439095 /* SocketDataManager.swift */; };
+		49AD73A12539308900439095 /* DataSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD73A02539308900439095 /* DataSocket.swift */; };
 		49D912B82536061E0057654C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D912B72536061E0057654C /* AppDelegate.swift */; };
 		49D912BA2536061E0057654C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D912B92536061E0057654C /* SceneDelegate.swift */; };
 		49D912BC2536061E0057654C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D912BB2536061E0057654C /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		491D786F253734F70088DAB6 /* GetRoundedButtonsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoundedButtonsUI.swift; sourceTree = "<group>"; };
+		49AD739B2539301600439095 /* SocketDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketDataManager.swift; sourceTree = "<group>"; };
+		49AD73A02539308900439095 /* DataSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSocket.swift; sourceTree = "<group>"; };
 		49D912B42536061E0057654C /* Report-Accident.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Report-Accident.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D912B72536061E0057654C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49D912B92536061E0057654C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				49D912C52536061F0057654C /* Info.plist */,
 				A635D7592536A86700B2F490 /* FormViewController.swift */,
 				491D786F253734F70088DAB6 /* GetRoundedButtonsUI.swift */,
+				49AD739B2539301600439095 /* SocketDataManager.swift */,
+				49AD73A02539308900439095 /* DataSocket.swift */,
 			);
 			path = "Report-Accident";
 			sourceTree = "<group>";
@@ -265,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D912BC2536061E0057654C /* ViewController.swift in Sources */,
+				49AD73A12539308900439095 /* DataSocket.swift in Sources */,
 				49D912B82536061E0057654C /* AppDelegate.swift in Sources */,
+				49AD739C2539301600439095 /* SocketDataManager.swift in Sources */,
 				49D912BA2536061E0057654C /* SceneDelegate.swift in Sources */,
 				491D7870253734F70088DAB6 /* GetRoundedButtonsUI.swift in Sources */,
 				A635D75A2536A86700B2F490 /* FormViewController.swift in Sources */,

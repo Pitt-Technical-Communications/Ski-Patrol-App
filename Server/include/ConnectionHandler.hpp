@@ -77,7 +77,7 @@ private:
     boost::asio::ip::tcp::socket m_socket;
 
     /// Message (Server -> Client)
-    std::string m_message = "Hello From Server!";
+    std::string m_message;
 
     /// Max length of message
     static const uint32_t MAX_LENGTH = 1024;
