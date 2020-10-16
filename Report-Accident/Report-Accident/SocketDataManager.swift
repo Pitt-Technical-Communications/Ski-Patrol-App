@@ -14,6 +14,9 @@ class SocketDataManager: NSObject, StreamDelegate {
     var inputStream: InputStream?
     var outputStream: OutputStream?
     var messages = [AnyHashable]()
+    var response = ""
+    
+
 
 
     func connectWith(socket: DataSocket)
@@ -71,11 +74,11 @@ class SocketDataManager: NSObject, StreamDelegate {
                     len = (inputStream?.read(&dataBuffer, maxLength: 1024))!
                     if len > 0
                     {
-                        let output = String(bytes: dataBuffer, encoding: .ascii)
+                        let output = String(bytes: dataBuffer, encoding: .utf8)
                         if nil != output
                         {
                             print("server said: \(output ?? "")")
-                            messageReceived(message: output!)
+                            setMessageReceived(message: output!)
                         }
                     }
                 }
@@ -85,26 +88,32 @@ class SocketDataManager: NSObject, StreamDelegate {
         case .errorOccurred:
             print("\(aStream.streamError?.localizedDescription ?? "")")
         case .endEncountered:
-            aStream.close()
-            aStream.remove(from: RunLoop.current, forMode: RunLoop.Mode.default)
-            print("close stream")
+            //aStream.close()
+            //aStream.remove(from: RunLoop.current, forMode: RunLoop.Mode.default)
+            print("End Encountered (nothing done)")
         default:
             print("Unknown event")
         }
     }
     
-    func messageReceived(message: String)
+    func setMessageReceived(message: String)
     {
-        print(message)
+        response = message
+    }
+    
+    func getMessageReceived() -> String
+    {
+        return response;
     }
     
     func send(message: String)
     {
         let response = "msg:\(message)"
         let buff = [UInt8](message.utf8)
-        if let _ = response.data(using: .ascii)
+        if let _ = response.data(using: .utf8)
         {
             outputStream?.write(buff, maxLength: buff.count)
+            print(message)
         }
     }
 }

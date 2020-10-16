@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     // Action When Call Ski Patrol Button is Pressed
     @IBAction func CallPhone(_ sender: UIButton)
     {
-        if let phoneURL = URL(string: "tel://\(1234567890)")
+        if let phoneURL = URL(string: "tel://\(4123430967)")
         {
             UIApplication.shared.open(phoneURL)
         }

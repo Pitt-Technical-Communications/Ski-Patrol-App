@@ -34,6 +34,7 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         
         let server_info = DataSocket(ip: "3.23.104.34", port_in: 1235)
         connection.connectWith(socket: server_info)
+        connection.send(message: "2")
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -58,14 +59,30 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBAction func SubmitFormButton(_ sender: Any)
     {
         // Put Server Code here
-        connection.send(message: "2 Accident Sent")
+        connection.send(message: "3 Accident Sent")
         
-        // Display Alert and navigate back to main screen
-        let sucessAlert = UIAlertController(title: "Form Submitted", message: "Your accident report form was sucessfuly submited.", preferredStyle: .alert)
+        let m_rec = connection.getMessageReceived()
         
-        sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: nil))
-        
-        self.present(sucessAlert, animated: true)
+        if m_rec != ""
+        {
+            // Display Alert and navigate back to main screen
+            let sucessAlert = UIAlertController(title: "Form Submitted", message: "Your accident report form was sucessfuly submited.", preferredStyle: .alert)
+            
+            sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: nil))
+            
+            self.present(sucessAlert, animated: true)
+            
+            connection.setMessageReceived(message: "")
+        }
+        else
+        {
+            // Display Alert and navigate back to main screen
+            let sucessAlert = UIAlertController(title: "Error", message: "Could not connect to server. Please contact server administrator. If this is an emergency, call Ski Patrol using number on Home Page", preferredStyle: .alert)
+            
+            sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: nil))
+            
+            self.present(sucessAlert, animated: true)
+        }
         
         connection.disconnect()
     }
