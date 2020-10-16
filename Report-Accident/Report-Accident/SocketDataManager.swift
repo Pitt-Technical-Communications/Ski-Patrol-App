@@ -88,9 +88,9 @@ class SocketDataManager: NSObject, StreamDelegate {
         case .errorOccurred:
             print("\(aStream.streamError?.localizedDescription ?? "")")
         case .endEncountered:
-            //aStream.close()
-            //aStream.remove(from: RunLoop.current, forMode: RunLoop.Mode.default)
-            print("End Encountered (nothing done)")
+            aStream.close()
+            aStream.remove(from: RunLoop.current, forMode: RunLoop.Mode.default)
+            print("Closing stream")
         default:
             print("Unknown event")
         }
