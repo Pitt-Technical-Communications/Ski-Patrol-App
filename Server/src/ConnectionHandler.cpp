@@ -40,8 +40,11 @@ void ConnectionHandler::HandleRead(const boost::system::error_code& rErr, size_t
     // Terminate what was transferred
     m_data[bytesTransferred] = '\0';
 
-    // Just print out the received data
-    std::cout << "Server received " << m_data << std::endl;
+    // Just print out the received data if it is not a connection request
+    if(m_data[0] != '2')
+    {
+	    std::cout << "Server received " << m_data << std::endl;
+    }
 
     // Parse the data into the request structure
     Common::Request req;
@@ -59,14 +62,19 @@ void ConnectionHandler::HandleRead(const boost::system::error_code& rErr, size_t
 
 void ConnectionHandler::HandleWrite(const boost::system::error_code& rErr, size_t bytesTransferred)
 {
-    if (!rErr)
+	// Print out reply if it is not an error or a connection check reply
+    if (!rErr && m_data[1] != '2')
     {
         // Just print out a message
         std::cout << "Server sent " << m_message.c_str() << std::endl;
     }
     else
     {
-        std::cerr << "error: " << rErr.message() << std::endl;
+    	// Don't print End of file errors
+	    if(rErr.message() != "End of file")
+	    {
+		    std::cerr << "error: " << rErr.message() << std::endl;
+	    }
         m_socket.close();
     }
 }
@@ -117,6 +125,11 @@ void ConnectionHandler::HandleRequest(Common::Request& rReq)
 
      switch (rReq.GetRequestCode())
      {
+     	case Common::RequestCode::CONNECTION_CHECK:
+        {
+        	resp.SetResponseCode(Common::ResponseCode::SUCCESS);
+        	break;
+        }
          case Common::RequestCode::REPORT:
         {
         	resp.SetResponseCode(Common::ResponseCode::SUCCESS);

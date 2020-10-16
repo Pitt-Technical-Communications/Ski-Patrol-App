@@ -25,7 +25,8 @@ namespace Common
 enum class RequestCode : uint8_t
 {
     ERROR = 1,
-    REPORT = 2
+    CONNECTION_CHECK = 2,
+    REPORT = 3
 };
 
 /**
