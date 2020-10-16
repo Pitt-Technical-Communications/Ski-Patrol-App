@@ -63,7 +63,7 @@ void ConnectionHandler::HandleRead(const boost::system::error_code& rErr, size_t
 void ConnectionHandler::HandleWrite(const boost::system::error_code& rErr, size_t bytesTransferred)
 {
 	// Print out reply if it is not an error or a connection check reply
-    if (!rErr && m_data[1] != '2')
+    if (!rErr && m_data[0] != '2')
     {
         // Just print out a message
         std::cout << "Server sent " << m_message.c_str() << std::endl;
