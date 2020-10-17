@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -38,7 +37,6 @@ class ViewController: UIViewController {
         
         // Sets font size for back button
         UIBarButtonItem.appearance().setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 20.0)], for: UIControl.State.normal)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

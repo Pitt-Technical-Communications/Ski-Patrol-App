@@ -41,7 +41,7 @@ void ConnectionHandler::HandleRead(const boost::system::error_code& rErr, size_t
     m_data[bytesTransferred] = '\0';
 
     // Just print out the received data if it is not a connection request
-    std::cout << "Server received " << m_data << std::endl;
+    //std::cout << "Server received " << m_data << std::endl;
 
     // Parse the data into the request structure
     Common::Request req;
@@ -63,7 +63,7 @@ void ConnectionHandler::HandleWrite(const boost::system::error_code& rErr, size_
     if (!rErr)
     {
         // Just print out a message
-        std::cout << "Server sent " << m_message.c_str() << std::endl;
+        //std::cout << "Server sent " << m_message.c_str() << std::endl;
     }
     else
     {
@@ -129,8 +129,15 @@ void ConnectionHandler::HandleRequest(Common::Request& rReq)
         }
          case Common::RequestCode::REPORT:
         {
+        	// Print Accident to console
+        	std::cout << "Server Received " << rReq.GetData() << std::endl;
+
+        	// Send sucess to client
         	resp.SetResponseCode(Common::ResponseCode::SUCCESS);
-        	resp.SetData("Received");
+
+        	// Print acknowlegdement to screen
+        	std::cout << "Server Acknowledges" << std::endl;
+
             break;
         }
          default:

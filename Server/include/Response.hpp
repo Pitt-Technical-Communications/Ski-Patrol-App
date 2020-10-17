@@ -24,8 +24,8 @@ namespace Common
 */
 enum class ResponseCode : uint8_t
 {
-	ERROR = 0,
-    SUCCESS = 3,
+	SUCCESS = 3,
+	ERROR = 1
 };
 
 /**

@@ -20,6 +20,7 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     var slopes:[String] = [String]()
     
     // Socket item to communicate with server
+    var connectionTest = SocketDataManager()
     var connection = SocketDataManager()
    
     override func viewDidLoad()
@@ -33,8 +34,10 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         LocationSlope.delegate = self
         
         let server_info = DataSocket(ip: "3.23.104.34", port_in: 1235)
+        connectionTest.connectWith(socket: server_info)
         connection.connectWith(socket: server_info)
-        connection.send(message: "2")
+        
+        connectionTest.send(message: "2 Probe")
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -61,7 +64,7 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         // Put Server Code here
         connection.send(message: "3 Accident Sent")
         
-        let m_rec = connection.getMessageReceived()
+        let m_rec = connectionTest.getMessageReceived()
         
         if m_rec != ""
         {
