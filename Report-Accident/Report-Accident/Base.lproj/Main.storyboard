@@ -249,6 +249,7 @@
                         <outlet property="MultipleVictimsSwitch" destination="SaS-Sr-6FW" id="x7k-eu-y1w"/>
                         <outlet property="NotMovingSwitch" destination="JeK-WP-Hq5" id="cwu-wt-wZb"/>
                         <outlet property="slopePicker" destination="5Ys-Yz-Dhb" id="BIC-DT-IfS"/>
+                        <outlet property="submitButton" destination="135-z8-0hT" id="SaP-40-6hS"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="exitForm" destinationCreationSelector="cancelAction:" id="kiS-Vf-Kjh"/>
                     </connections>
                 </viewController>

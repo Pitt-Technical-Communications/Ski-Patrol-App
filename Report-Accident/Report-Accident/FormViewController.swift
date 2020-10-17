@@ -19,7 +19,10 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var BloodScene: UISwitch!
     @IBOutlet weak var NotMovingSwitch: UISwitch!
     @IBOutlet weak var MultipleVictimsSwitch: UISwitch!
+    @IBOutlet weak var submitButton: UIButton!
     
+    // Checkers for valid input
+    var isValidText = false
     
     // Picker Items
     var slopes:[String] = [String]()
@@ -31,6 +34,9 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
    
     override func viewDidLoad()
     {
+        submitButton.isEnabled = false
+        submitButton.alpha = 0.5
+        
         super.viewDidLoad()
         // Set data source and delegate
         slopePicker.dataSource = self
@@ -62,7 +68,79 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
+        // Check if server is connected if user starts editing the form
+        let m_rec = connectionTest.getMessageReceived()
+        if m_rec == ""
+        {
+            // Display Alert and navigate back to main screen
+            let sucessAlert = UIAlertController(title: "Error", message: "Could not connect to server. Please contact server administrator. If this is an emergency, call Ski Patrol using number on Home Page", preferredStyle: .alert)
+            
+            sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: returnToHome))
+            
+            self.present(sucessAlert, animated: true)
+        }
+        
        selectedSlope = row
+        
+        if(selectedSlope < 1)
+        {
+            submitButton.isEnabled = false
+            submitButton.alpha = 0.5
+        }
+        if isValidText && (selectedSlope > 0)
+        {
+            submitButton.isEnabled = true
+            submitButton.alpha = 1
+        }
+    }
+    
+    // Check that the server is connected when user starts editing text field
+    func textFieldDidBeginEditing(_ textField: UITextField)
+    {
+        // Check if server is connected if user starts editing the form
+        let m_rec = connectionTest.getMessageReceived()
+        if m_rec == ""
+        {
+            // Display Alert and navigate back to main screen
+            let sucessAlert = UIAlertController(title: "Error", message: "Could not connect to server. Please contact server administrator. If this is an emergency, call Ski Patrol using number on Home Page", preferredStyle: .alert)
+            
+            sucessAlert.addAction(UIAlertAction(title:"Return to Main Screen", style: .default, handler: returnToHome))
+            
+            self.present(sucessAlert, animated: true)
+        }
+    }
+    // Delegate for UITextFeild
+    func textFieldDidEndEditing(_ textField: UITextField)
+    {
+        if LocationSlope.text == ""
+        {
+            isValidText = false
+            submitButton.isEnabled = false
+            submitButton.alpha = 0.5
+        }
+        else if LocationSlope.text == " " || LocationSlope.text == "  "
+        {
+            isValidText = false
+            submitButton.isEnabled = false
+            submitButton.alpha = 0.5
+        }
+        else if LocationSlope.text == "Example: Top, Skier's Right"
+        {
+            isValidText = false
+            submitButton.isEnabled = false
+            submitButton.alpha = 0.5
+        }
+        else
+        {
+            isValidText = true
+        }
+        
+        // Enable submit button if requried fields are filld out
+        if isValidText && (selectedSlope > 0)
+        {
+            submitButton.isEnabled = true
+            submitButton.alpha = 1
+        }
     }
     
     /*
