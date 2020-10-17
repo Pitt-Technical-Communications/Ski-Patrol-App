@@ -62,7 +62,7 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBAction func SubmitFormButton(_ sender: Any)
     {
         // Put Server Code here
-        connection.send(message: "3 Accident Sent")
+        connection.send(message: "3 Accident Report")
         
         let m_rec = connectionTest.getMessageReceived()
         
