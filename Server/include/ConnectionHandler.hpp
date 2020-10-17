@@ -6,6 +6,7 @@
 
 // SYSTEM INCLUDES
 #include <string>
+#include <vector>
 #include <boost/asio.hpp>
 #include <boost/enable_shared_from_this.hpp>
 
@@ -18,87 +19,83 @@ namespace Common
 struct Request;
 }
 
-class ConnectionHandler : public boost::enable_shared_from_this<ConnectionHandler>
-{
+class ConnectionHandler : public boost::enable_shared_from_this<ConnectionHandler> {
 public:
-    typedef boost::shared_ptr<ConnectionHandler> pointer;
+	typedef boost::shared_ptr<ConnectionHandler> pointer;
 
-    /**
-     * @brief Creates a new ConnectionHandler object
-    */
-    explicit ConnectionHandler(boost::asio::io_service& rIoService) :
-        m_socket(rIoService)
-    {}
+	/**
+	 * @brief Creates a new ConnectionHandler object
+	*/
+	explicit ConnectionHandler(boost::asio::io_service &rIoService) :
+			m_socket(rIoService) {}
 
-    /**
-     * @brief Creates the pointer
-    */
-    static pointer Create(boost::asio::io_service& rIoService)
-    {
-            return pointer(new ConnectionHandler(rIoService));
-    }
+	/**
+	 * @brief Creates the pointer
+	*/
+	static pointer Create(boost::asio::io_service &rIoService) {
+		return pointer(new ConnectionHandler(rIoService));
+	}
 
-    /**
-     * @brief Returns the socket member
-    */
-    boost::asio::ip::tcp::socket& GetSocket()
-    {
-        return m_socket;
-    }
+	/**
+	 * @brief Returns the socket member
+	*/
+	boost::asio::ip::tcp::socket &GetSocket() {
+		return m_socket;
+	}
 
-    /**
-     * @brief Begins an asynchronous read and write one after another
-     * 
-     * @details If you would like to alter how read and writes are handled,
-     * edit HandleRead and HandleWrite. If you would like to change when or in
-     * what order, this method can be altered
-    */
-    void Start();
+	/**
+	 * @brief Begins an asynchronous read and write one after another
+	 *
+	 * @details If you would like to alter how read and writes are handled,
+	 * edit HandleRead and HandleWrite. If you would like to change when or in
+	 * what order, this method can be altered
+	*/
+	void Start();
 
-    /**
-     * @brief Method to operate on the data read from the client
-     * 
-     * @param rErr                  Error if applicable
-     * @param bytesTransferred      Number of bytes transferred from client
-    */
-    void HandleRead(const boost::system::error_code& rErr, size_t bytesTransferred);
+	/**
+	 * @brief Method to operate on the data read from the client
+	 *
+	 * @param rErr                  Error if applicable
+	 * @param bytesTransferred      Number of bytes transferred from client
+	*/
+	void HandleRead(const boost::system::error_code &rErr, size_t bytesTransferred);
 
-    /**
-     * @brief Method to perform tasks after sending data to client
-     * 
-     * @param rErr                  Error if applicable
-     * @param bytesTransferred      Number of bytes transferred to client
-    */
-    void HandleWrite(const boost::system::error_code& rErr, size_t bytesTransferred);
+	/**
+	 * @brief Method to perform tasks after sending data to client
+	 *
+	 * @param rErr                  Error if applicable
+	 * @param bytesTransferred      Number of bytes transferred to client
+	*/
+	void HandleWrite(const boost::system::error_code &rErr, size_t bytesTransferred);
 
 protected:
 private:
-    /// TCP socket
-    boost::asio::ip::tcp::socket m_socket;
 
-    /// Message (Server -> Client)
-    std::string m_message;
+	/// TCP socket
+	boost::asio::ip::tcp::socket m_socket;
 
-    /// Max length of message
-    static const uint32_t MAX_LENGTH = 1024;
+	/// Message (Server -> Client)
+	std::string m_message;
 
-    /// Data (Client -> Server)
-    char m_data[MAX_LENGTH];
+	/// Max length of message
+	static const uint32_t MAX_LENGTH = 1024;
 
-    /**
-     * @brief Parses the data received to construct a request object
-     * 
-     * @param[out] rReq     Request constructed from recieved information
-    */
-    void ParseRequest(Common::Request& rReq);
+	/// Data (Client -> Server)
+	char m_data[MAX_LENGTH];
 
-    /**
-     * @brief Determines what actions to take for a given request. This
-     * could include setting the reply message
-     * 
-     * @param rReq   Request that was received
-    */
-    void HandleRequest(Common::Request& rReq);
+	/**
+	 * @brief Parses the data received to construct a request object
+	 *
+	 * @param[out] rReq     Request constructed from recieved information
+	*/
+	void ParseRequest(Common::Request &rReq);
+
+	/**
+	 * @brief Determines what actions to take for a given request. This
+	 * could include setting the reply message
+	 *
+	 * @param rReq   Request that was received
+	*/
+	void HandleRequest(Common::Request &rReq);
 };
-
 #endif // INCLUDE_CONNECTION_HANDLER_HPP_

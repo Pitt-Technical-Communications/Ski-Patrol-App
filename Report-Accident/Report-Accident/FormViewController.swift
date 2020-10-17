@@ -15,9 +15,15 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     // Set Picker View as output
     @IBOutlet weak var slopePicker: UIPickerView!
+    @IBOutlet weak var LocationInfo: UITextField!
+    @IBOutlet weak var BloodScene: UISwitch!
+    @IBOutlet weak var NotMovingSwitch: UISwitch!
+    @IBOutlet weak var MultipleVictimsSwitch: UISwitch!
+    
     
     // Picker Items
     var slopes:[String] = [String]()
+    var selectedSlope = -1
     
     // Socket item to communicate with server
     var connectionTest = SocketDataManager()
@@ -29,7 +35,7 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         // Set data source and delegate
         slopePicker.dataSource = self
         slopePicker.delegate = self
-        slopes = ["Other (Explain Below)", "Alpine Meadows", "Avalanche", "Beginner Area", "Blitzen Chairline", "Boomerang", "Cortina Trail", "Deer Pass Trail", "Fawn Lane", "Giant Boulder", "Giant Steps", "Goosebumps", "Great Western", "Gunnar", "Gunnar Chairline", "Little Boulder", "Little North Face", "Lost Boy", "Lost Girl", "North Face", "Phillip's Run", "Stowe", "Stowe Beginner Bowl", "Stowe Trail", "Tyrol",  "Village Trail", "Wagner", "Yodeler", "Yodeler Bypass"]
+        slopes = ["--","Other (Explain Below)", "Alpine Meadows", "Avalanche", "Beginner Area", "Blitzen Chairline", "Boomerang", "Cortina Trail", "Deer Pass Trail", "Fawn Lane", "Giant Boulder", "Giant Steps", "Goosebumps", "Great Western", "Gunnar", "Gunnar Chairline", "Little Boulder", "Little North Face", "Lost Boy", "Lost Girl", "North Face", "Phillip's Run", "Stowe", "Stowe Beginner Bowl", "Stowe Trail", "Tyrol",  "Village Trail", "Wagner", "Yodeler", "Yodeler Bypass"]
         
         LocationSlope.delegate = self
         
@@ -54,6 +60,10 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     {
         return slopes[row]
     }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+       selectedSlope = row
+    }
     
     /*
      * Submit Button
@@ -61,13 +71,48 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     // Form Submited action button click
     @IBAction func SubmitFormButton(_ sender: Any)
     {
-        // Put Server Code here
-        connection.send(message: "3 Accident Report")
-        
+        // Chooe which message to display based on earlier probe to server
         let m_rec = connectionTest.getMessageReceived()
-        
         if m_rec != ""
         {
+            var m_tosend = "3 "
+            
+            // Construct message to server
+            if(selectedSlope < 10)
+            {
+                m_tosend.append("0")    // Add leading 0 if the index <10
+            }
+            m_tosend.append(String(selectedSlope))
+            m_tosend.append(" ")
+            if BloodScene.isOn
+            {
+                m_tosend.append("1 ")
+            }
+            else
+            {
+                m_tosend.append("0 ")
+            }
+            if NotMovingSwitch.isOn
+            {
+                m_tosend.append("1 ")
+            }
+            else
+            {
+                m_tosend.append("0 ")
+            }
+            if MultipleVictimsSwitch.isOn
+            {
+                m_tosend.append("1 ")
+            }
+            else
+            {
+                m_tosend.append("0 ")
+            }
+            m_tosend.append(LocationInfo.text ?? "None...")
+            
+            // Send server constructed message
+            connection.send(message: m_tosend)
+            
             // Display Alert and navigate back to main screen
             let sucessAlert = UIAlertController(title: "Form Submitted", message: "Your accident report form was sucessfuly submited.", preferredStyle: .alert)
             

@@ -15,6 +15,7 @@
 #include "Request.hpp" // For Common::Request
 #include "Response.hpp" // For Common::Response
 
+std::string slopes[] = {"--","Other (Explain Below)", "Alpine Meadows", "Avalanche", "Beginner Area", "Blitzen Chairline", "Boomerang", "Cortina Trail", "Deer Pass Trail", "Fawn Lane", "Giant Boulder", "Giant Steps", "Goosebumps", "Great Western", "Gunnar", "Gunnar Chairline", "Little Boulder", "Little North Face", "Lost Boy", "Lost Girl", "North Face", "Phillip's Run", "Stowe", "Stowe Beginner Bowl", "Stowe Trail", "Tyrol",  "Village Trail", "Wagner", "Yodeler", "Yodeler Bypass"};
 
 void ConnectionHandler::Start()
 {
@@ -128,9 +129,27 @@ void ConnectionHandler::HandleRequest(Common::Request& rReq)
         	break;
         }
          case Common::RequestCode::REPORT:
-        {
+         {
+         	// Parse the data sent
+         	int slopeListNum = std::stoi(rReq.GetData().substr(0, 2));
+         	std::string location = rReq.GetData().substr(9, rReq.GetData().size() - 9);
+
         	// Print Accident to console
-        	std::cout << "Server Received " << rReq.GetData() << std::endl;
+        	std::cout << std::endl << "!! ACCIDENT REPORTED !!" << std::endl;
+        	std::cout << "Slope: " << slopes[slopeListNum] << std::endl;
+        	std::cout << "\t" << location << std::endl;
+        	if(rReq.GetData()[3] == '1')
+	        {
+        		std::cout << "\tBlood Reported" << std::endl;
+	        }
+			 if(rReq.GetData()[5] == '1')
+			 {
+			     std::cout << "\tNot Moving" << std::endl;
+			 }
+	         if(rReq.GetData()[7] == '1')
+	         {
+		         std::cout << "\tMultiple Victims" << std::endl;
+	         }
 
         	// Send sucess to client
         	resp.SetResponseCode(Common::ResponseCode::SUCCESS);
