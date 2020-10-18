@@ -5,7 +5,7 @@ A mobile device app that skiiers and snowboarders can use at Seven Springs resor
 ## Report Form
 ![Main Page](elevator-generator/report-form.png)
 ## Trail Map
-![Main Page](elevator-generator/)
+![Main Page](elevator-generator/trail-map.jpg)
 ## Form Submitted
 ![Main Page](elevator-generator/form-submitted.png)
 ## Call Page
