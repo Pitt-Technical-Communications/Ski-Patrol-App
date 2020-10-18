@@ -2,9 +2,11 @@
 A mobile device app that skiiers and snowboarders can use at Seven Springs resort to efficiently report accidents and injuries. Users can fill out an accident report form or call the emergency ski patrol phone number to recieve the quickest care possible. 
 ## Main Page
 When users open the application they will see the options to either make a accident report or call the ski patrol directly.
+
 ![Main Page](elevator-generator/main-page.png)
 ## Report Form
 Users are able to provide information in the report such as the trail, the exact location and details about the condition of the victim.
+
 ![Main Page](elevator-generator/report-form.png)
 ## Form Submitted
 Once the user submits the report, the application communicates to a server.  This allows the ski partol to instantly access the details of the report.
@@ -12,6 +14,7 @@ Once the user submits the report, the application communicates to a server.  Thi
 ![Main Page](elevator-generator/form-submitted.png)
 ## Call Page
 If the user chooses to call rather that fill out a report, the application will dial the ski patrol with one button.
+
 ![Main Page](elevator-generator/call-page.png)
 ## Trail Map
 ![Main Page](elevator-generator/trail-map.jpg)
