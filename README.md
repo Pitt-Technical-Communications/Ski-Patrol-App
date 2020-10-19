@@ -9,19 +9,19 @@ When users open the application they will see the options to either make a accid
 ## Report Form
 Users are able to provide information in the report such as the trail, the exact location and details about the condition of the victim.
 
-![Main Page](elevator-generator/report-form.png)
+![Report Form](elevator-generator/report-form.png)
 ## Form Submitted
 Once the user submits the report, the application communicates to a server.  This allows the ski partol to instantly access the details of the report.
 
-![Main Page](elevator-generator/form-submitted.png)
+![Submitted Form](elevator-generator/form-submitted.png)
 ## Call Page
 If the user chooses to call rather that fill out a report, the application will dial the ski patrol with one button.
 
-![Main Page](elevator-generator/call-page.png)
+![Call Page](elevator-generator/call-page.png)
 ## Trail Map
 If the User needs a visual to find what slope they are on, the trail map button will provide a visual for them.
 
-![Main Page](elevator-generator/trail-map.jpg)
+![Trail Map](elevator-generator/trail-map.jpg)
 ## Demo
 
 ## History
@@ -33,6 +33,8 @@ If the User needs a visual to find what slope they are on, the trail map button 
 * We plan to pitch this program to the Seven Springs ski patrol with hopes that it could be implemented into their operations.
 
 ## Team
+Andrew Toader 
+Tyler Comisky
+Nick Latiolias
 
-## License
-
+## [License](https://github.com/aet37/Ski-Patrol-App/LICENSE.md)
