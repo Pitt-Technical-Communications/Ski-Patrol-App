@@ -25,7 +25,13 @@ If the User needs a visual to find what slope they are on, the trail map button 
 ## Demo
 
 ## History
-
+1. Mad an initial pitch to form a team
+2. Started a trello sight to manage scrums
+3. Created a wireframe of the app
+4. Made a pitch with the intial design
+5. Started Xcode project to design the app
+6. Added and set up server 
+7. Created LICENSE and README
 ## Changes
 
 ## Goals
@@ -33,8 +39,9 @@ If the User needs a visual to find what slope they are on, the trail map button 
 * We plan to pitch this program to the Seven Springs ski patrol with hopes that it could be implemented into their operations.
 
 ## Team
-Andrew Toader 
-Tyler Comisky
-Nick Latiolias
+>Andrew Toader 
+>Tyler Comisky
+>Nick Latiolias
+>Jason Weger
 
 ## [License](https://github.com/aet37/Ski-Patrol-App/LICENSE.md)
