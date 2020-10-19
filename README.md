@@ -19,6 +19,8 @@ If the user chooses to call rather that fill out a report, the application will 
 
 ![Main Page](elevator-generator/call-page.png)
 ## Trail Map
+If the User needs a visual to find what slope they are on, the trail map button will provide a visual for them.
+
 ![Main Page](elevator-generator/trail-map.jpg)
 ## Demo
 
