@@ -39,7 +39,7 @@ If the User needs a visual to find what slope they are on, the trail map button 
 ## Team
 >Andrew Toader 
 >Tyler Comisky
->Nick Latiolias
+>Nick Latiolais
 >Jason Weger
 
 ## [License](https://github.com/aet37/Ski-Patrol-App/blob/main/LICENSE.md)
