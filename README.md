@@ -11,7 +11,7 @@ Users are able to provide information in the report such as the trail, the exact
 
 ![Report Form](Images/report-form.jpg)
 
-## Call Page
+## Call Button
 If the user chooses to call rather that fill out a report, the application will dial the ski patrol with one button.
 
 ![Call Page](Images/call-button.jpg)
@@ -28,6 +28,7 @@ If the User needs a visual to find what slope they are on, the trail map button 
 5. Started Xcode project to design the app
 6. Added and set up server 
 7. Created LICENSE and README
+8. Started creating a website for non-apple users to use the service
 
 ## Goals
 * Currently this application is only compatable with IOS.  We wish to create a similar program as a website to accomidate android and other users.
