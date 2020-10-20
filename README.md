@@ -11,7 +11,6 @@ Users are able to provide information in the report such as the trail, the exact
 
 ![Report Form](Images/report-form.jpg)
 
-![Submitted Form](elevator-generator/form-submitted.png)
 ## Call Page
 If the user chooses to call rather that fill out a report, the application will dial the ski patrol with one button.
 
