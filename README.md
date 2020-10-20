@@ -7,11 +7,9 @@ When users open the application they will see the options to either make a accid
 
 ![Main Page](Images/main-page.jpg)
 ## Report Form
-Users are able to provide information in the report such as the trail, the exact location and details about the condition of the victim.
+Users are able to provide information in the report such as the trail, the exact location and details about the condition of the victim.  Once the user submits the report, the application communicates to a server.  This allows the ski partol to instantly access the details of the report.
 
 ![Report Form](Images/report-form.jpg)
-## Form Submitted
-Once the user submits the report, the application communicates to a server.  This allows the ski partol to instantly access the details of the report.
 
 ![Submitted Form](elevator-generator/form-submitted.png)
 ## Call Page
