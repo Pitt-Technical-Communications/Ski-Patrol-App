@@ -5,11 +5,11 @@ This application intends to help first responders at Seven Springs render aid mo
 ## Main Page
 When users open the application they will see the options to either make a accident report or call the ski patrol directly.
 
-![Main Page](elevator-generator/main-page.png)
+![Main Page](Images/main-page.jpg)
 ## Report Form
 Users are able to provide information in the report such as the trail, the exact location and details about the condition of the victim.
 
-![Report Form](elevator-generator/report-form.png)
+![Report Form](Images/report-form.jpg)
 ## Form Submitted
 Once the user submits the report, the application communicates to a server.  This allows the ski partol to instantly access the details of the report.
 
@@ -17,7 +17,7 @@ Once the user submits the report, the application communicates to a server.  Thi
 ## Call Page
 If the user chooses to call rather that fill out a report, the application will dial the ski patrol with one button.
 
-![Call Page](elevator-generator/call-page.png)
+![Call Page](Images/call-button.jpg)
 ## Trail Map
 If the User needs a visual to find what slope they are on, the trail map button will provide a visual for them.
 
