@@ -22,7 +22,6 @@ If the user chooses to call rather that fill out a report, the application will 
 If the User needs a visual to find what slope they are on, the trail map button will provide a visual for them.
 
 ![Trail Map](elevator-generator/trail-map.jpg)
-## Demo
 
 ## History
 1. Mad an initial pitch to form a team
@@ -32,7 +31,6 @@ If the User needs a visual to find what slope they are on, the trail map button 
 5. Started Xcode project to design the app
 6. Added and set up server 
 7. Created LICENSE and README
-## Changes
 
 ## Goals
 * Currently this application is only compatable with IOS.  We wish to create a similar program as a website to accomidate android and other users.
