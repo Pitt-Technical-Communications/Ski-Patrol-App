@@ -38,6 +38,20 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         submitButton.alpha = 0.5
         
         super.viewDidLoad()
+        
+        // Hides navigation bar on home page
+        self.navigationController?.isNavigationBarHidden = true;
+        
+        // Sets navigation bar color
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "redAccent")
+
+        
+        // Sets navigation bar title color and font
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 36.0)]
+        
+        // Sets font size for back button
+        UIBarButtonItem.appearance().setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 20.0)], for: UIControl.State.normal)
+        
         // Set data source and delegate
         slopePicker.dataSource = self
         slopePicker.delegate = self
