@@ -1,4 +1,4 @@
-# Seven Spirngs Accident Reporting Application
+# Seven Springs Accident Reporting Application
 A mobile device app that skiiers and snowboarders can use at Seven Springs resort to report accidents and injuries. Users can fill out an accident report form or call the emergency ski patrol phone number to recieve the quickest care possible. 
 ## Intentions
 This application intends to help first responders at Seven Springs render aid more quickly and efficiently than the current system.  A user making a report via the app will get useful information to ski patrol more quickly than waiting to get off of the lift or to the bottom of the slope. This can ultimately save lives when serious accidents occur.
