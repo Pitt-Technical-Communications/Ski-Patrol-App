@@ -2480,9 +2480,9 @@ fieldset:disabled a.btn {
   border-color: #ffffff;
 }
 .btn-primary:hover {
-  color: #fff;
-  background-color: #159a80;
-  border-color: #148f77;
+  color: #eb4034;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
@@ -9842,7 +9842,7 @@ a.text-warning:hover, a.text-warning:focus {
 }
 
 .text-danger {
-  color: #dc3545 !important;
+  color: #ffffff !important;
 }
 
 a.text-danger:hover, a.text-danger:focus {
@@ -10096,10 +10096,10 @@ h3 {
   color: #eb4034;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
-  color: #fff;
+  color: #eb4034;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
-  color: #1abc9c;
+  color: #ffffff;
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
@@ -10120,12 +10120,12 @@ h3 {
     margin-top: 0;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
-    color: #fff;
-    background: #1abc9c;
+    color: #eb4034;
+    background: #ffffff;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
-    color: #fff;
-    background: #1abc9c;
+    color: #eb4034;
+    background: #ffffff;
   }
 
   #mainNav.navbar-shrink {
