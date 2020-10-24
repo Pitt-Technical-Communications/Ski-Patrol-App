@@ -60,31 +60,61 @@
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
                         <form id="contactForm" name="sentMessage" novalidate="novalidate">
                             <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Name</label>
-                                    <input class="form-control" id="name" type="text" placeholder="Name of Slope" required="required" data-validation-required-message="Please enter the slope name the victim is on." />
+                                <div class="form-group controls mb-0 pb-2 form-dropdown">
+									<label id="dropdown-label" for="slopes">Name of Slope:</label>
+									<p></p>
+									
+									<select name="slopes" id="name">
+										<option disabled selected style="display:none"> Select a Slope</option>
+										<option value="other">Other (Explain Below)</option>
+										<option value="alpine-meadows">Alpine Meadows</option>
+										<option value="avalanche">Avalanche</option>
+										<option value="beginner-area">Beginner Area</option>
+										<option value="blitzen-chairline">Blitzen Chairline</option>
+										<option value="boomerang">Boomerang</option>
+										<option value="cortina-trail">Cortina Trail</option>
+										<option value="deer-pass-trail">Deer Pass Trail</option>
+										<option value="fawn-lane">Fawn Lane</option>
+										<option value="giant-boulder">Giant Boulder</option>
+										<option value="giant-steps">Giant Steps</option>
+										<option value="goosebumps">Goosebumps</option>
+										<option value="great-western">Great Western</option>
+										<option value="gunnar">Gunnar</option>
+										<option value="gunnar-chairline">Gunnar Chairline</option>
+										<option value="little-boulder">Little Boulder</option>
+										<option value="little-north-face">Little North Face</option>
+										<option value="lost-boy">Lost Boy</option>
+										<option value="lost-girl">Lost Girl</option>
+										<option value="north-face">North Face</option>
+										<option value="phillips-run">Phillip's Run</option>
+										<option value="stowe">Stowe</option>
+										<option value="stowe-beginner-bowl">Stowe Beginner Bowl</option>
+										<option value="stowe-trail">Stowe Trail</option>
+										<option value="tyrol">Tyrol</option>
+										<option value="village-trail">Village Trail</option>
+										<option value="wagner">Wagner</option>
+										<option value="yodeler">Yodeler</option>
+										<option value="yodeler-bypass">Yodeler Bypass</option>
+									</select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2 label-class">
+									<label for="location">Location on Slope:</label>
+                                    <input class="form-control" id="location" type="text" placeholder="Example: Top, Skier's Right" required="required" data-validation-required-message="Please enter the general location on the slope the victim is at." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                           <!-- <div class="dropdown">
-                                <button type="button" class="btn btn-primary btn-xl dropdown-toggle" type="button" id="name" data-toggle="dropdown">Name of Slope</button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" type="text">Slope 1</a>
-                                    <a class="dropdown-item" type="text">Slope 2</a>
-                                    <a class="dropdown-item" type="text">Slope 3</a>
-                                </div>
-                            </div> -->
                             <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Email Address</label>
-                                    <input class="form-control" id="location" type="text" placeholder="Location on Slope" required="required" data-validation-required-message="Please enter the general location on the slope the victim is at." />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Phone Number</label>
-                                    <input class="form-control" id="condition" type="text" placeholder="Condition of Victim" required="required" data-validation-required-message="Please enter the condition of the victim." />
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2 label-class">
+									<label for="condition">Condition of Victim: </label>
+                                    <!--<input class="form-control" id="condition" type="text" placeholder="Condition of Victim" required="required" data-validation-required-message="Please enter the condition of the victim." />-->
+									<input class="form-checkbox" type="checkbox" id="blood-on-scene" name="blood-on-scene" value="Blood On Scene"> Blood on Scene</input>
+									<p></p>
+									<input type="checkbox" id="not-moving" name="not-moving" value="Not Moving"> Not Moving</input>
+									<p></p>
+									<input type="checkbox" id="multiple-victims" name="multiple-victims" value="Multiple Victims"> Multiple Victims</input>
+									
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
