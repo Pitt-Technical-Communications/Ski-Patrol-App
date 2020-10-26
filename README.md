@@ -1,7 +1,7 @@
 # Seven Springs Accident Reporting Application
 This repository contains code for a mobile device app which skiiers and snowboarders can use at Seven Springs Mountain Resort to report accidents and injuries on the slopes. Users may fill out an accident report form or call the ski patrol phone number to recieve the quickest care possible. 
 ## Intentions
-This application intends to help ski patrollers at Seven Springs be alerted of accidents more quickly and efficiently than the current system.  Currently, someone must alert a lift attendant at the top of bottom to report an accident to  ski patrol, which can take time especially for long lifts. A user making a report via the app will get useful information to ski patrol more quickly than waiting to get off of the lift or to the bottom of the slope. This can ultimately save lives when serious accidents occur.
+This application intends to alert ski patrollers at Seven Springs of accidents more quickly and efficiently than the current system.  Currently, someone must alert a lift attendant at the top of bottom of the slope to report an accident to ski patrol, which can take time especially in the case of a long lift. A user making a report via the app will get useful information to ski patrol more quickly than waiting to get off of the lift or to the bottom of the slope. This can ultimately save lives when serious accidents occur.
 ## Main Page
 When users open the application, they will see the options to either make a accident report or call the ski patrol directly. The main screen of the application is shown in the image below.
 
