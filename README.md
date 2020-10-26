@@ -14,7 +14,7 @@ The form is depicted in the figure below:
 ![Report Form](Images/report-form.jpg)
 
 ## Call Button
-If the user chooses to call rather that fill out a report, the application will dial the ski patrol with one button. This is useful in the case that the user's hands may be too cold to fill out a form and they would rather talk to someone. It is also useful if the server is off for any reason and a user would like to report an accident. The call functionality is depicted in the image below.
+If the user chooses to call rather that fill out a report, the application will dial the ski patrol with the click of one button. This is useful in the case that the user's hands may be too cold to fill out a form and they would rather talk to someone. It is also useful if the server is turned off for any reason and a user would like to report an accident. The call functionality is depicted in the image below.
 
 ![Call Page](Images/call-button.jpg)
 ## Trail Map
