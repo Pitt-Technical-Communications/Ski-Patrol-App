@@ -23,7 +23,7 @@ If the User needs a visual to find out which slope they are on, the trail map bu
 ![Trail Map](elevator-generator/trail-map.jpg)
 
 ## History of the Project
-1. Made an initial pitch in Pitt's NGCMP 0600 class to form a team.
+1. Made an initial pitch in The University of Pittsburgh's ENGCMP 0600 class to form a team.
 2. Started a trello kanban board to manage tasks for the group members.
 3. Created a wireframe of the app to create the initial design.
 4. Made a pitch to the professor with the intial design.
