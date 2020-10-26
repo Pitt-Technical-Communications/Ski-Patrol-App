@@ -31,7 +31,14 @@ If the User needs a visual to find out which slope they are on, the trail map bu
 6. Wrote server-side code to capture accident reports from the iOS application. 
 7. Created LICENSE and README files.
 8. Started coding a website for non-apple users to use the service.
-
+## Updating the Project
+In the case that this application, website, and/or server become outdated, one may need to update these systems.
+### 1. Updating the server
+All of the server code is written in C++. It uses the C++ boost/asio library to send and recieve messages over TCP/IP. To update the serverside code, you will have to look into the "Server" directory.
+### 2. Updating the iOS app
+The iOS application is written in Swift. The easiest way to edit this application is to open xCode (on MacOS) and edit the UI of the app. All of the swift code is contained in the "Report-Accident" directory
+### 3. Updating the website
+The webiste code is written in HTML/CSS/JavaScript. The code for this is contained in the "report-website" directory.
 ## Goals
 * Currently this application is only compatable with iOS.  We wish to create a similar form on a website to accomidate android and other users.
 * We plan to help Seven Springs Ski Patrol implement this project for use starting Winter 2020.
